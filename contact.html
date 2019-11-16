@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styleW.css">
+        <link rel="icon" type="image/png"
+        href="img/sign.png" />
+        <title>Contact</title>
+  </head>  
+
+
+<body>
+
+    <header>
+        
+            <a href="./"><div class="title"><img src = "img/sign.png" height = "20px" style = "position: relative; top: 3px;"> Jordan's Crafts</div></a>
+            
+            
+        <nav>
+
+          
+          
+              <a href="./"><div class = "navlink">Home</div></a>
+                <a href="resume.html"><div class = "navlink">Resume</div></a>
+                <a href="contact.html"><div class = "navlink  thisPage">Contact</div></a>
+                <a href="about.html"><div class = "navlink">About</div></a>
+            
+
+          
+        </nav>
+     
+    </header>
+    <div class="dropdown">
+               
+                <a href="./"><div class = "droplink">Home</div></a>
+                <a href="resume.html"><div class = "droplink">Resume</div></a>
+                <a href="contact.html"><div class = "droplink">Contact</div></a>
+                <a href="about.html"><div class = "droplink">About</div></a>
+                <button onclick="dropdown()"><div class="droplink visible"><img src = "img/threeLines.png" height = "20px"></div></button>
+    </div>
+
+
+    <div class= "space"></div><!--space from header-->
+
+
+
+    <div class="content" style = "height:calc(100vh - 80px); overflow-y:scroll;">
+        <h1>Contact me</h1>
+        <form method="POST" name="contactform" action="contact-form-handler.php" enctype="multipart/form-data"> 
+        <p>
+        <label for='name'>Your Name:</label> <br>
+        <input type="text" name="name">
+        </p>
+        <p>
+        <label for='company'>Company:</label> <br>
+        <input type="text" name="company" placeholder="(Optional)">
+        </p>
+        <p>
+        <label for='email'>Email Address:</label> <br>
+        <input type="text" name="email"> <br>
+        </p>
+        <p>
+        <label for='message'>Message:</label> <br>
+        <textarea name="message"></textarea>
+        </p>
+        <p style="font-size: 9pt; color:grey;">
+        <label for='uploaded_file'></label>
+        <input type="file" name="uploaded_file">
+        <br>
+        </p>
+        <br>
+
+        <input type="submit" value="Submit" ><br>
+        </form>
+
+        
+
+
+
+        <hr>
+        <p style = "font-size:9pt; margin-top: 30px; ">Jordan Murti<br>
+            1365 Enchanted Way<br>
+            San Mateo, Califronia, 94402<br>
+            United States<br>
+            <a href="mailto:jmurti@g.ucla.edu">jmurti@g.ucla.edu</a> 
+        </p>
+    
+    </div>
+
+    
+    <script language="JavaScript">
+    // Code for validating the form
+    // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+    // for details
+    var frmvalidator  = new Validator("contactform");
+    frmvalidator.addValidation("name","req","Please provide your name"); 
+    frmvalidator.addValidation("email","req","Please provide your email"); 
+    frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+    </script>
+    <!--
+    Sample code from:
+    http://www.html-form-guide.com/contact-form/php-email-contact-form.html
+    -->
+
+
+
+    
+    <div style="width: calc(100%-20px);">
+      <footer>
+      
+
+          <a href="https://www.linkedin.com/in/jordan-murti/"><div class = "footlink"><img src = "img/linkdraw.png" height = "20px" style = "position: relative; top: 3px;"> LinkedIn</div></a>
+          <a href="https://www.facebook.com/jordan.murti"><div class = "footlink"><img src = "img/facedraw.png" height = "20px" style = "position: relative; top: 3px;"> Facebook</div></a>
+          <a href="https://github.com/minimurti"><div class = "footlink"><img src = "img/gitdraw.png" height = "20px" style = "position: relative; top: 3px;"> GitHub</div></a>
+          <a href="https://www.thingiverse.com/minimurti/designs"><div class = "footlink"><img src = "img/thingdraw.png" height = "20px" style = "position: relative; top: 3px;"> Thingiverse</div></a>
+          
+        
+
+        
+            
+        
+      </footer>
+
+
+
+    </div>
+
+
+
+
+
+<script>
+
+var poppy = document.getElementsByClassName("popDown")[3];
+var dropped = document.getElementsByClassName("dropdown")[0];
+var droppedHI = document.getElementsByClassName("droplink");
+
+function dropdown() {
+  if(dropped.style.top != "40px"){
+    
+    dropped.style.top = "40px";
+    
+    
+
+  }
+  
+  else{
+   
+    dropped.style.top = "0px";
+
+  }
+
+}
+
+
+</script>
+
+</body>
+
+</html>
