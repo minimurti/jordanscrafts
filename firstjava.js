@@ -12,15 +12,25 @@ var spandot4 = document.getElementById("dot4");
 var spandot5 = document.getElementById("dot5");
 var spandot6 = document.getElementById("dot6");
 
+var leftArrow = document.getElementById("leftArrow");
+var rightArrow = document.getElementById("rightArrow");
+
 
 Portvid.ontimeupdate = function() {PortFunction()};
 
 
-
-
-
-
 Portvid.onclick = function(){
+
+  divOpen();
+
+}
+
+portoverlay.onclick = function(){
+  divOpen();
+}
+
+
+function divOpen(){
   
   if(Portvid.currentTime > 0.1){
 
@@ -77,6 +87,101 @@ Portvid.onclick = function(){
 
 
 
+
+rightArrow.onclick = function(){
+  document.getElementById("portoverlay").style.opacity = "0";
+  
+  if(Portvid.currentTime > 0){
+
+
+    if(Portvid.currentTime < 8.8){
+      Portvid.currentTime = 8.8;
+    }
+
+    if(Portvid.currentTime > 8.8 && Portvid.currentTime < 15.7){
+      Portvid.currentTime = 15.7;
+    }
+
+
+    if(Portvid.currentTime > 15.7 && Portvid.currentTime < 22){
+      Portvid.currentTime = 22;
+    }
+  
+
+    if(Portvid.currentTime > 22 && Portvid.currentTime < 30){
+      Portvid.currentTime = 30;
+    }
+    
+
+    if(Portvid.currentTime > 30 && Portvid.currentTime < 35.6){
+      Portvid.currentTime = 35.6;
+    }
+
+
+    if(Portvid.currentTime > 35.6 && Portvid.currentTime < 41.5){
+      Portvid.currentTime = 41.5;
+    }
+
+
+    if(Portvid.currentTime > 41.5){
+      Portvid.currentTime = 0;
+
+    }
+
+  }
+
+}
+
+
+
+
+
+leftArrow.onclick = function(){
+  document.getElementById("portoverlay").style.opacity = "0";
+  
+  if(Portvid.currentTime > 0){
+
+
+    if(Portvid.currentTime < 8.8){
+      Portvid.currentTime = 41.5;
+    }
+
+    if(Portvid.currentTime > 8.8 && Portvid.currentTime < 15.7){
+      Portvid.currentTime = 0;
+    }
+
+
+    if(Portvid.currentTime > 15.7 && Portvid.currentTime < 22){
+      Portvid.currentTime = 8.8;
+    }
+  
+
+    if(Portvid.currentTime > 22 && Portvid.currentTime < 30){
+      Portvid.currentTime = 15.7;
+    }
+    
+
+    if(Portvid.currentTime > 30 && Portvid.currentTime < 35.6){
+      Portvid.currentTime = 22;
+    }
+
+
+    if(Portvid.currentTime > 35.6 && Portvid.currentTime < 41.5){
+      Portvid.currentTime = 30;
+    }
+
+
+    if(Portvid.currentTime > 41.5){
+      Portvid.currentTime = 35.6;
+
+    }
+
+  }
+
+}
+
+
+
 var poppy = document.getElementsByClassName("popDown")[3];
 var dropped = document.getElementsByClassName("dropdown")[0];
 var droppedHI = document.getElementsByClassName("droplink");
@@ -104,7 +209,25 @@ function dropdown() {
 function PortFunction() {
   // Display the current position of the video in a p element with id="demo"
   
-  if(Portvid.currentTime < 8.8){
+
+  // if((Portvid.currentTime > 0.5 && Portvid.currentTime < 0.6) || (Portvid.currentTime > 9 && Portvid.currentTime < 9.1) || (Portvid.currentTime > 13 && Portvid.currentTime < 13.1) || (Portvid.currentTime > 19.2 && Portvid.currentTime < 19.3) || (Portvid.currentTime > 27.2 && Portvid.currentTime < 27.3) || (Portvid.currentTime > 32.8 && Portvid.currentTime < 32.9) || (Portvid.currentTime > 38.7 && Portvid.currentTime < 38.8) ){
+  //   document.getElementById("portoverlay").style.opacity = "1";
+  // }
+
+  if((Portvid.currentTime > 0.6 && Portvid.currentTime < 1) || (Portvid.currentTime > 9 && Portvid.currentTime < 9.5) || (Portvid.currentTime > 16.5 && Portvid.currentTime < 17.5) || (Portvid.currentTime > 22.7 && Portvid.currentTime < 23.7) || (Portvid.currentTime > 30 && Portvid.currentTime < 31) || (Portvid.currentTime > 36.2 && Portvid.currentTime < 37.2) || (Portvid.currentTime > 42.2 && Portvid.currentTime < 43.2)){
+    document.getElementById("portoverlay").style.opacity = "1";
+  } 
+
+
+
+
+  if((Portvid.currentTime > 6 && Portvid.currentTime < 6.5) || (Portvid.currentTime > 13 && Portvid.currentTime < 13.5) || (Portvid.currentTime > 20.2 && Portvid.currentTime < 21.2) || (Portvid.currentTime > 27.2 && Portvid.currentTime < 27.7) || (Portvid.currentTime > 33.8 && Portvid.currentTime < 34.8) || (Portvid.currentTime > 39.7 && Portvid.currentTime < 40.7) || (Portvid.currentTime > 46.2)){
+    document.getElementById("portoverlay").style.opacity = "0";
+  }
+
+
+
+  if(Portvid.currentTime > 0.1 && Portvid.currentTime < 8.8){
     spandot0.style.backgroundColor = "#888";
   }
   else{
@@ -158,30 +281,37 @@ function PortFunction() {
 
 spandot0.onclick = function() {
   Portvid.currentTime = 0;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot1.onclick = function() {
   Portvid.currentTime = 8.8;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot2.onclick = function() {
   Portvid.currentTime = 15.7;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot3.onclick = function() {
   Portvid.currentTime = 22;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot4.onclick = function() {
   Portvid.currentTime = 30;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot5.onclick = function() {
   Portvid.currentTime = 35.6;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 spandot6.onclick = function() {
   Portvid.currentTime = 41.5;
+  document.getElementById("portoverlay").style.opacity = "0";
 }
 
 
@@ -419,10 +549,6 @@ window.onclick = function(event) {
         Portvid.play();
       }
   }
-
-  
-  
-
 
 
  

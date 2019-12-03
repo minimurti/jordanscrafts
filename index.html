@@ -45,13 +45,26 @@
 
 
       
-        <div class = "videobase">
-                <video autoplay muted loop preload="auto" playsinline width="100%" height="auto" id = "PortVideo">
+        <a href="javascript:;" id = "videobase" style="text-decoration: none;">
+                <video autoplay muted loop preload="auto" playsinline id = "PortVideo" poster="img/white.png">
                         <source src="https://minimurti.github.io/jordanscrafts/vid/portfolioVid.mp4" type="video/mp4">
                         <source src="https://minimurti.github.io/jordanscrafts/vid/portfolioVid.webm" type="video/webm">
                         <source src="https://minimurti.github.io/jordanscrafts/vid/portfolioVid.ogv" type="video/ogv">
                       Your browser does not support the video tag.
                 </video>
+
+                <div id ="portoverlay" style="opacity: 0;">
+                  (Click For More Info)
+                </div>
+
+                <span class = "portLeftRight left" id="leftArrow">
+                &lt;
+                </span>
+
+                <div class = "portLeftRight right" id="rightArrow">
+                  &gt;
+                </div>
+
                 <div style="margin: 0 auto; width: 84px"><!--
                   --><span class="dot" id="dot0"></span><!--
                   --><span class="dot" id="dot1"></span><!--
@@ -61,11 +74,11 @@
                   --><span class="dot" id="dot5"></span><!--
                   --><span class="dot" id="dot6"></span>
                 </div>
-        </div>
+          </a>
 
         
         
-          <div class="spacefromheader"></div>
+          <div class="spacefromheader" style="height: 25px;"></div>
           <div class = "debuts">
   
             <a href="#0" style="text-decoration: none;" id="FITBtn">
@@ -281,7 +294,7 @@
 
     <a href="#0" style="text-decoration: none; font-size: 2pt;" id="RunReload">
     <div style="max-width: 500px; margin: 0 auto; position: relative; top: -20px">
-      <video id = "RunVid" class = "debutVid" muted playsinline width="100%" height="auto" autoplay>
+      <video preload = "metadata" id = "RunVid" class = "debutVid" muted playsinline width="100%" height="auto" autoplay>
         <source src="https://minimurti.github.io/jordanscrafts/vid/runVid.mp4" type="video/mp4">
         <source src="https://minimurti.github.io/jordanscrafts/vid/runVid.webm" type="video/webm">
         <source src="https://minimurti.github.io/jordanscrafts/vid/runvid.ogv" type="video/ogv">
@@ -430,7 +443,7 @@
 
       <a href="#0" style="text-decoration: none;" id="SkateReload">
       <div style="max-width: 500px; margin: 0 auto; position: relative; top: -20px; z-index: 3;">
-        <video id = "SkateVid" class = "debutVid" muted playsinline width="100%" height="auto" autoplay>
+        <video id = "SkateVid" class = "debutVid" preload = "metadata" muted playsinline width="100%" height="auto" autoplay>
           <source src="https://minimurti.github.io/jordanscrafts/vid/skateVid.mp4" type="video/mp4">
           <source src="https://minimurti.github.io/jordanscrafts/vid/skateVid.webm" type="video/webm">
           <source src="https://minimurti.github.io/jordanscrafts/vid/skateVid.ogv" type="video/ogv">

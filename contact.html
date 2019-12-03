@@ -45,9 +45,9 @@
 
 
 
-    <div class="content" style = "height:calc(100vh - 80px); overflow-y:scroll;">
+    <div class="content" style = "height:calc(100vh - 100px); overflow-y:scroll;">
         <h1>Contact me</h1>
-        <form method="POST" name="contactform" action="contact-form-handler.php" enctype="multipart/form-data"> 
+        <form method="POST" name="contactform" action="mailto:jmurti@g.ucla.edu" enctype="text/plain"> 
         <p>
         <label for='name'>Your Name:</label> <br>
         <input type="text" name="name">
@@ -64,11 +64,11 @@
         <label for='message'>Message:</label> <br>
         <textarea name="message"></textarea>
         </p>
+
         <p style="font-size: 9pt; color:grey;">
-        <label for='uploaded_file'></label>
-        <input type="file" name="uploaded_file">
-        <br>
+          (Note: If you can read this message then you are currently viewing the website hosted through a free service such as GitHub which can only host static websites and not send mail and attachments through it's own server scripts. Note that this form will instead simply act to fill out a regular email template)
         </p>
+ 
         <br>
 
         <input type="submit" value="Submit" ><br>
