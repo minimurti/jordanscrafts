@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sucking Statistics Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #results {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #formula {
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        #variables {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sucking Statistics Calculator</h1>
+
+    <label for="rate">AVG Rate of Sucks Per Second:</label>
+    <input type="number" id="rate" value="0">
+
+    <label for="duration">Average Length of Sucking Sessions (Minutes):</label>
+    <input type="number" id="duration" value="0">
+
+    <label for="sessions">Average Sessions Per Week:</label>
+    <input type="number" id="sessions" value="0">
+
+    <label for="years">Years of Sucking:</label>
+    <input type="number" id="years" value="0">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <br><br>
+    <img id="myImage" src="bpandme.png" alt="Image Description" height="100">
+
+    <div id="results"></div>
+
+    <script>
+        function calculate() {
+            const rate = parseFloat(document.getElementById("rate").value);
+            const duration = parseFloat(document.getElementById("duration").value);
+            const sessions = parseFloat(document.getElementById("sessions").value);
+            const years = parseFloat(document.getElementById("years").value);
+
+            const totalMiles = (rate * 60 * duration * sessions * 52.143 * years) / 5280;
+            const totalMarathons = (rate * 60 * duration * sessions * 52.143 * years) / (5280 * 26.2188);
+
+            document.getElementById("results").innerHTML = `
+                <p>Total Miles Sucked: ${totalMiles.toFixed(2)}</p>
+                <p>Total Marathons Sucked: ${totalMarathons.toFixed(2)}</p>
+                <p>This site is made possible by the creative efforts of Bradey Pearson and Jordan Murti</p>
+
+                    <div id="formula">
+                        <h2>Formula:</h2>
+                        <p>Total Miles Sucked = (A * 60 * B * C * 52.143 * D) / 5280</p>
+                        <p>Total Marathons Sucked = (A * 60 * B * C * 52.143 * D) / (5280 * 26.2188)</p>
+                    </div>
+
+                    <div id="variables">
+                        <h3>Variables:</h3>
+                        <p>A = AVG Rate of Sucks Per Second</p>
+                        <p>B = Average Length of Sucking Sessions (Minutes)</p>
+                        <p>C = Average Sessions Per Week</p>
+                        <p>D = Years of Sucking</p>
+                    </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
