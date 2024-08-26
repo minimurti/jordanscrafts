@@ -120,8 +120,23 @@ display: inline-block;
 
 
 
-
-
+.contactBubble {
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    margin: 0 auto;
+    font-size: 50px;
+    padding: inherit;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 75, 94);
+    width: 90%;
+    height: 100px;
+    display: flex;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.199);
+    border-radius: 15px;
+}
 
 
 

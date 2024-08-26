@@ -7,32 +7,26 @@
         <link rel="icon" type="image/png"
         href="img/sign.png" />
         <title>Contact</title>
-  </head>  
+  </head>
 
 
 <body>
 
     <header>
-        
             <a href="./"><div class="title"><img src = "img/sign.png" height = "20px" style = "position: relative; top: 3px;"> Jordan's Crafts</div></a>
-            
-            
         <nav>
-
-          
-          
               <a href="./"><div class = "navlink">Home</div></a>
                 <a href="resume.html"><div class = "navlink">Resume</div></a>
                 <a href="contact.html"><div class = "navlink  thisPage">Contact</div></a>
                 <a href="about.html"><div class = "navlink">About</div></a>
-            
 
-          
+
+
         </nav>
-     
+
     </header>
     <div class="dropdown">
-               
+
                 <a href="./"><div class = "droplink">Home</div></a>
                 <a href="resume.html"><div class = "droplink">Resume</div></a>
                 <a href="contact.html"><div class = "droplink">Contact</div></a>
@@ -47,56 +41,26 @@
 
     <div class="content" style = "height:calc(100vh - 100px); overflow-y:scroll;">
         <h1>Contact me</h1>
-        <form method="POST" name="contactform" action="mailto:jmurti@g.ucla.edu" enctype="text/plain"> 
-        <p>
-        <label for='name'>Your Name:</label> <br>
-        <input type="text" name="name">
-        </p>
-        <p>
-        <label for='company'>Company:</label> <br>
-        <input type="text" name="company" placeholder="(Optional)">
-        </p>
-        <p>
-        <label for='email'>Email Address:</label> <br>
-        <input type="text" name="email"> <br>
-        </p>
-        <p>
-        <label for='message'>Message:</label> <br>
-        <textarea name="message"></textarea>
-        </p>
-
-        <p style="font-size: 9pt; color:grey;">
-          (Note: If you can read this message then you are currently viewing the website hosted through a free service such as GitHub which can only host static websites and not send mail and attachments through it's own server scripts. Note that this form will instead simply act to fill out a regular email template)
-        </p>
- 
-        <br>
-
-        <input type="submit" value="Submit" ><br>
-        </form>
+        <a class="contactBubble" href="https://instagram.com/jordan_d_hampton">instagram</a>
+        <a class="contactBubble" href="https://www.facebook.com/jordan_d_hampton">facebook</a>
+        <a class="contactBubble" href="https://www.tiktok.com/@jordan_d_hampton">tiktok</a>
+        <a class="contactBubble" href="https://www.linkedin.com/in/jordan-murti">linkedIn</a>
 
         
 
 
 
-        <hr>
-        <p style = "font-size:9pt; margin-top: 30px; ">Jordan Murti<br>
-            1365 Enchanted Way<br>
-            San Mateo, Califronia, 94402<br>
-            United States<br>
-            <a href="mailto:jmurti@g.ucla.edu">jmurti@g.ucla.edu</a> 
-        </p>
-    
     </div>
 
-    
+
     <script language="JavaScript">
     // Code for validating the form
     // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
     // for details
     var frmvalidator  = new Validator("contactform");
-    frmvalidator.addValidation("name","req","Please provide your name"); 
-    frmvalidator.addValidation("email","req","Please provide your email"); 
-    frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+    frmvalidator.addValidation("name","req","Please provide your name");
+    frmvalidator.addValidation("email","req","Please provide your email");
+    frmvalidator.addValidation("email","email","Please enter a valid email address");
     </script>
     <!--
     Sample code from:
@@ -105,30 +69,15 @@
 
 
 
-    
+
     <div style="width: calc(100%-20px);">
       <footer>
-      
-
           <a href="https://www.linkedin.com/in/jordan-murti/"><div class = "footlink"><img src = "img/linkdraw.png" height = "20px" style = "position: relative; top: 3px;"> LinkedIn</div></a>
           <a href="https://www.facebook.com/jordan.murti"><div class = "footlink"><img src = "img/facedraw.png" height = "20px" style = "position: relative; top: 3px;"> Facebook</div></a>
           <a href="https://github.com/minimurti"><div class = "footlink"><img src = "img/gitdraw.png" height = "20px" style = "position: relative; top: 3px;"> GitHub</div></a>
           <a href="https://www.thingiverse.com/minimurti/designs"><div class = "footlink"><img src = "img/thingdraw.png" height = "20px" style = "position: relative; top: 3px;"> Thingiverse</div></a>
-          
-        
-
-        
-            
-        
       </footer>
-
-
-
     </div>
-
-
-
-
 
 <script>
 
@@ -138,21 +87,69 @@ var droppedHI = document.getElementsByClassName("droplink");
 
 function dropdown() {
   if(dropped.style.top != "40px"){
-    
+
     dropped.style.top = "40px";
-    
-    
+
+
 
   }
-  
+
   else{
-   
+
     dropped.style.top = "0px";
 
   }
 
 }
 
+'use strict';
+
+function downloadToFile(content, filename, contentType) {
+  const a = document.createElement('a');
+  const file = new Blob([content], { type: contentType });
+
+  a.href = URL.createObjectURL(file);
+  a.download = filename;
+  a.click();
+
+  URL.revokeObjectURL(a.href);
+}
+
+function previewFile(event) {
+  let reader = new FileReader();
+  let file = event.target.files[0];
+
+  reader.readAsDataURL(file);
+  reader.onloadend = () => (previewEl.src = reader.result);
+}
+
+const makeVCardVersion = () => `VERSION:3.0`;
+const makeVCardInfo = (info) => `N:${info}`;
+const makeVCardName = (name) => `FN:${name}`;
+const makeVCardOrg = (org) => `ORG:${org}`;
+const makeVCardTitle = (title) => `TITLE:${title}`;
+const makeVCardPhoto = (img) => `PHOTO;TYPE=JPEG;ENCODING=b:[${img}]`;
+const makeVCardTel = (phone) => `TEL;TYPE=WORK,VOICE:${phone}`;
+const makeVCardAdr = (address) => `ADR;TYPE=WORK,PREF:;;${address}`;
+const makeVCardEmail = (email) => `EMAIL:${email}`;
+const makeVCardTimeStamp = () => `REV:${new Date().toISOString()}`;
+
+function makeVCard() {
+  let vcard = `BEGIN:VCARD
+${makeVCardVersion()}
+${makeVCardName("Jordan Murti")}
+${makeVCardTitle("Jordan Murti")}
+${makeVCardPhoto("img/RunRun.png")}
+${makeVCardTel("650-288-9128")}
+${makeVCardAdr("680 Mission Street, San Francisco 94105")}
+${makeVCardEmail("jordan.murti5@gmail.com")}
+${makeVCardTimeStamp()}
+END:VCARD`;
+  downloadToFile(vcard, 'vcard.vcf', 'text/vcard');
+}
+
+downloadEl.addEventListener('click', makeVCard);
+fileEl.addEventListener('change', previewFile);
 
 </script>
 
